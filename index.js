@@ -1,5 +1,9 @@
 const server = require('./src/app.js');
-const PORT = 3001
-server.listen(3001, () => {
-    console.log(`La aplicación está escuchando en http://localhost:${PORT}`) // eslint-disable-line no-console
+const { conn } = require('./src/db.js');
+
+
+conn.once('open', function() {
+  server.listen(3001, () => {
+    console.log('server listening at 3001'); // eslint-disable-line no-console
   });
+});
