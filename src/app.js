@@ -20,7 +20,7 @@ app.use(cors());
 // Usa Morgan para registrar las solicitudes HTTP
 app.use(morgan('dev'));
 
-app.use('/', routes);
+app.use('/dogsApi', routes);
 
 // Error catching endware.
 app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
